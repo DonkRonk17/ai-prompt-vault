@@ -1,0 +1,113 @@
+{
+  "exported": "2025-12-27",
+  "description": "Starter pack of useful AI prompts for developers",
+  "count": 15,
+  "prompts": [
+    {
+      "name": "code-review",
+      "content": "Review this code for:\n1. Bugs and potential issues\n2. Performance improvements\n3. Security vulnerabilities\n4. Code style and best practices\n5. Readability improvements\n\nProvide specific, actionable feedback with code examples where helpful.",
+      "category": "coding",
+      "tags": ["review", "quality"],
+      "description": "Comprehensive code review prompt"
+    },
+    {
+      "name": "explain-code",
+      "content": "Explain this code in detail:\n1. What does it do? (high-level overview)\n2. How does it work? (step-by-step breakdown)\n3. Why is it written this way? (design decisions)\n4. What are the key concepts used?\n5. Are there any edge cases or limitations?",
+      "category": "coding",
+      "tags": ["explanation", "learning"],
+      "description": "Deep code explanation"
+    },
+    {
+      "name": "debug-help",
+      "content": "I'm encountering this error/bug:\n[DESCRIBE ERROR]\n\nContext:\n- What I'm trying to do: [GOAL]\n- What I expected: [EXPECTED]\n- What happened: [ACTUAL]\n- What I've tried: [ATTEMPTS]\n\nPlease help me:\n1. Understand why this is happening\n2. Identify the root cause\n3. Provide a fix with explanation",
+      "category": "debugging",
+      "tags": ["debug", "error", "fix"],
+      "description": "Structured debugging request"
+    },
+    {
+      "name": "refactor-clean",
+      "content": "Refactor this code to:\n1. Improve readability and maintainability\n2. Follow SOLID principles where applicable\n3. Reduce complexity and duplication\n4. Add appropriate error handling\n5. Keep the same functionality\n\nExplain each change you make and why.",
+      "category": "refactoring",
+      "tags": ["clean-code", "solid"],
+      "description": "Clean code refactoring"
+    },
+    {
+      "name": "write-tests",
+      "content": "Write comprehensive tests for this code:\n1. Unit tests for each function/method\n2. Edge cases and boundary conditions\n3. Error handling scenarios\n4. Integration tests if applicable\n\nUse [FRAMEWORK] testing framework. Include setup/teardown if needed.",
+      "category": "testing",
+      "tags": ["unit-tests", "tdd"],
+      "description": "Test generation prompt"
+    },
+    {
+      "name": "api-design",
+      "content": "Design a REST API for [FEATURE]:\n1. Define endpoints (method, path, purpose)\n2. Request/response schemas\n3. Authentication requirements\n4. Error responses\n5. Rate limiting considerations\n\nFollow REST best practices and provide OpenAPI-style documentation.",
+      "category": "coding",
+      "tags": ["api", "rest", "design"],
+      "description": "REST API design helper"
+    },
+    {
+      "name": "git-commit",
+      "content": "Write a clear, conventional commit message for these changes:\n[DESCRIBE CHANGES]\n\nFormat:\n<type>(<scope>): <subject>\n\n<body>\n\nTypes: feat, fix, docs, style, refactor, test, chore\nKeep subject under 50 chars, body wrapped at 72.",
+      "category": "documentation",
+      "tags": ["git", "commit"],
+      "description": "Conventional commit message generator"
+    },
+    {
+      "name": "readme-gen",
+      "content": "Generate a comprehensive README.md for this project:\n\n1. Project title and description\n2. Features list\n3. Installation instructions\n4. Usage examples with code\n5. Configuration options\n6. Contributing guidelines\n7. License\n\nMake it clear, professional, and developer-friendly.",
+      "category": "documentation",
+      "tags": ["readme", "docs"],
+      "description": "README generator"
+    },
+    {
+      "name": "optimize-perf",
+      "content": "Analyze and optimize this code for performance:\n1. Identify bottlenecks\n2. Suggest algorithmic improvements\n3. Memory optimization opportunities\n4. Caching strategies\n5. Async/parallel processing options\n\nProvide benchmarks or complexity analysis where relevant.",
+      "category": "coding",
+      "tags": ["performance", "optimization"],
+      "description": "Performance optimization"
+    },
+    {
+      "name": "security-audit",
+      "content": "Perform a security audit on this code:\n1. Input validation vulnerabilities\n2. Authentication/authorization issues\n3. Injection risks (SQL, XSS, etc.)\n4. Sensitive data exposure\n5. Dependency vulnerabilities\n\nRate severity (High/Medium/Low) and provide fixes.",
+      "category": "coding",
+      "tags": ["security", "audit"],
+      "description": "Security vulnerability check"
+    },
+    {
+      "name": "convert-language",
+      "content": "Convert this code from [SOURCE_LANG] to [TARGET_LANG]:\n1. Maintain the same functionality\n2. Use idiomatic patterns for the target language\n3. Handle language-specific differences\n4. Add appropriate type hints/annotations\n5. Include equivalent imports/dependencies",
+      "category": "coding",
+      "tags": ["conversion", "translation"],
+      "description": "Code language conversion"
+    },
+    {
+      "name": "explain-error",
+      "content": "Explain this error message:\n[ERROR MESSAGE]\n\n1. What does this error mean?\n2. Common causes\n3. How to diagnose the specific issue\n4. How to fix it\n5. How to prevent it in the future",
+      "category": "debugging",
+      "tags": ["error", "explanation"],
+      "description": "Error message explainer"
+    },
+    {
+      "name": "brainstorm-solutions",
+      "content": "I need to solve this problem:\n[PROBLEM DESCRIPTION]\n\nConstraints:\n- [CONSTRAINT 1]\n- [CONSTRAINT 2]\n\nProvide 3-5 different approaches:\n1. Pros and cons of each\n2. Implementation complexity\n3. Your recommendation and why",
+      "category": "creative",
+      "tags": ["brainstorm", "solutions"],
+      "description": "Solution brainstorming"
+    },
+    {
+      "name": "code-comments",
+      "content": "Add clear, helpful comments to this code:\n1. Function/class docstrings\n2. Complex logic explanations\n3. Important assumptions\n4. TODO/FIXME where appropriate\n\nFollow the language's documentation conventions. Don't over-comment obvious code.",
+      "category": "documentation",
+      "tags": ["comments", "docs"],
+      "description": "Code documentation"
+    },
+    {
+      "name": "regex-help",
+      "content": "Help me create a regex pattern for:\n[DESCRIBE WHAT TO MATCH]\n\nExamples of strings that SHOULD match:\n- [EXAMPLE 1]\n- [EXAMPLE 2]\n\nExamples that should NOT match:\n- [EXAMPLE 3]\n\nProvide:\n1. The regex pattern\n2. Explanation of each part\n3. Test cases\n4. Any edge cases to consider",
+      "category": "coding",
+      "tags": ["regex", "pattern"],
+      "description": "Regex pattern builder"
+    }
+  ]
+}
+
