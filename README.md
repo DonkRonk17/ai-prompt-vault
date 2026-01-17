@@ -1,3 +1,5 @@
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/cfb3b6ec-641a-401d-b433-be9a58f3c569" />
+
 # 🗃️ AI Prompt Vault
 
 **Save, organize, search, and reuse your best AI prompts.**
@@ -253,6 +255,7 @@ Edit `~/.prompt-vault/config.json`:
 ├── prompts.json    # Your prompts database
 └── config.json     # Configuration
 ```
+<img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/acc503d2-11e6-4445-8e3e-f185a1276dcd" />
 
 ---
 
