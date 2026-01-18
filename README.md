@@ -276,6 +276,14 @@ MIT License - Use freely, modify freely, share freely.
 
 ---
 
+## 🙏 Credits
+
+Created by **Randell Logan Smith and Team Brain** at [Metaphy LLC](https://metaphysicsandcomputing.com)
+
+Part of the HMSS (Heavenly Morning Star System) ecosystem.
+
+---
+
 ## 👤 Author
 
 **Randell Logan Smith** ([@DonkRonk17](https://github.com/DonkRonk17))
