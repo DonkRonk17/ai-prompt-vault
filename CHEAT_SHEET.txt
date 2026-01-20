@@ -1,0 +1,306 @@
+═══════════════════════════════════════════════════════════════════════════════
+ AI PROMPT VAULT - QUICK REFERENCE
+═══════════════════════════════════════════════════════════════════════════════
+
+INSTALLATION
+────────────────────────────────────────────────────────────────────────────────
+git clone https://github.com/DonkRonk17/AI-Prompt-Vault.git
+cd AI-Prompt-Vault
+python prompt_vault.py init
+
+BASIC COMMANDS
+────────────────────────────────────────────────────────────────────────────────
+prompt_vault.py init                    Initialize vault
+prompt_vault.py add NAME CONTENT        Add new prompt
+prompt_vault.py use NAME                Use prompt (copy to clipboard)
+prompt_vault.py get NAME                View prompt details
+prompt_vault.py list                    List all prompts
+prompt_vault.py search QUERY            Search prompts
+prompt_vault.py delete NAME             Delete prompt
+prompt_vault.py update NAME [OPTIONS]   Update prompt
+prompt_vault.py stats                   Show statistics
+prompt_vault.py categories              List categories
+prompt_vault.py interactive             Interactive mode
+
+ADD PROMPT
+────────────────────────────────────────────────────────────────────────────────
+Basic:
+  prompt_vault.py add "name" "content"
+
+With category:
+  prompt_vault.py add "name" "content" -c coding
+
+With tags:
+  prompt_vault.py add "name" "content" -t python,debug,error
+
+With everything:
+  prompt_vault.py add "name" \
+    -c coding \
+    -t python,test \
+    -d "Description" \
+    "Content here"
+
+From file:
+  prompt_vault.py add "name" -f file.txt -c coding
+
+USE PROMPT
+────────────────────────────────────────────────────────────────────────────────
+Copy to clipboard (default):
+  prompt_vault.py use "prompt-name"
+
+Display only (no clipboard):
+  prompt_vault.py use "prompt-name" --no-copy
+
+LIST & SEARCH
+────────────────────────────────────────────────────────────────────────────────
+All prompts:
+  prompt_vault.py list
+
+By category:
+  prompt_vault.py list -c coding
+  prompt_vault.py list -c writing
+
+By tag:
+  prompt_vault.py list -t python
+  prompt_vault.py list -t debug
+
+Search everywhere:
+  prompt_vault.py search "keyword"
+
+UPDATE PROMPT
+────────────────────────────────────────────────────────────────────────────────
+Change category:
+  prompt_vault.py update "name" -c new-category
+
+Change tags:
+  prompt_vault.py update "name" -t "tag1,tag2,tag3"
+
+Change name:
+  prompt_vault.py update "old-name" -n "new-name"
+
+Update content from file:
+  prompt_vault.py update "name" -f newcontent.txt
+
+IMPORT/EXPORT
+────────────────────────────────────────────────────────────────────────────────
+Export all:
+  prompt_vault.py export all-prompts.json
+
+Export by category:
+  prompt_vault.py export coding-prompts.json -c coding
+
+Import:
+  prompt_vault.py import prompts.json
+
+Import with overwrite:
+  prompt_vault.py import prompts.json --overwrite
+
+DELETE
+────────────────────────────────────────────────────────────────────────────────
+With confirmation:
+  prompt_vault.py delete "prompt-name"
+
+Skip confirmation:
+  prompt_vault.py delete "prompt-name" -y
+
+CATEGORIES (Default)
+────────────────────────────────────────────────────────────────────────────────
+coding          - Writing and improving code
+writing         - Non-code writing tasks  
+analysis        - Code analysis, reviews
+creative        - Brainstorming, ideation
+debugging       - Finding and fixing bugs
+refactoring     - Code cleanup and restructuring
+documentation   - READMEs, comments, docs
+testing         - Writing tests
+general         - Everything else
+
+COMMON WORKFLOWS
+────────────────────────────────────────────────────────────────────────────────
+Quick add and use:
+  prompt_vault.py add "test" "content"
+  prompt_vault.py use "test"
+
+Find and use:
+  prompt_vault.py search "review"
+  prompt_vault.py use "code-review"
+
+Export for team:
+  prompt_vault.py export team-prompts.json -c coding
+
+Backup vault:
+  prompt_vault.py export backup-$(date +%Y%m%d).json
+
+INTERACTIVE MODE
+────────────────────────────────────────────────────────────────────────────────
+prompt_vault.py interactive
+
+Then follow prompts:
+- Name: [enter name]
+- Category: [enter category]  
+- Tags: [tag1, tag2, tag3]
+- Description: [optional description]
+- Content: [enter content, end with ---]
+
+TIPS & TRICKS
+────────────────────────────────────────────────────────────────────────────────
+Use placeholders:
+  "Debug this [LANGUAGE] error: [ERROR_MESSAGE]"
+
+Name with prefixes for grouping:
+  python-debug-error
+  python-debug-performance
+  python-debug-memory
+
+Tag liberally for easy finding:
+  -t python,debug,error,traceback,stackoverflow
+
+Export weekly for backup:
+  prompt_vault.py export weekly-backup.json
+
+Check usage stats:
+  prompt_vault.py stats
+
+FILE LOCATIONS
+────────────────────────────────────────────────────────────────────────────────
+Vault directory:    ~/.prompt-vault/
+Prompts database:   ~/.prompt-vault/prompts.json
+Configuration:      ~/.prompt-vault/config.json
+
+SHELL ALIASES (Add to .bashrc or .zshrc)
+────────────────────────────────────────────────────────────────────────────────
+alias pv="python ~/AI-Prompt-Vault/prompt_vault.py"
+alias pva="pv add"
+alias pvu="pv use"
+alias pvl="pv list"
+alias pvs="pv search"
+
+Then use:
+  pv list
+  pvu "code-review"
+  pvs "debug"
+
+EXPORT FORMAT
+────────────────────────────────────────────────────────────────────────────────
+{
+  "exported": "2026-01-20T...",
+  "count": 10,
+  "prompts": [
+    {
+      "id": "abc12345",
+      "name": "code-review",
+      "content": "Review this code...",
+      "category": "coding",
+      "tags": ["review", "code"],
+      "description": "Code review helper",
+      "created": "2026-01-15T...",
+      "updated": "2026-01-20T...",
+      "uses": 15
+    }
+  ]
+}
+
+COMMON USE CASES
+────────────────────────────────────────────────────────────────────────────────
+Code Review:
+  pv add "review" "Review for: bugs, performance, security, tests, docs"
+  
+Debug Helper:
+  pv add "debug" "Help debug: [ERROR]. Context: [CODE]. Expected: [EXPECTED]"
+
+Commit Message:
+  pv add "commit" "Write conventional commit message for: [CHANGES]"
+
+Test Generator:
+  pv add "tests" "Write tests for [FUNCTION]. Cover: happy path, edge cases"
+
+Documentation:
+  pv add "docs" "Document [CODE]. Include: purpose, params, returns, examples"
+
+TROUBLESHOOTING
+────────────────────────────────────────────────────────────────────────────────
+Can't find prompt:
+  prompt_vault.py list            # View all
+  prompt_vault.py search "keyword"  # Search
+
+Clipboard not working:
+  pip install pyperclip          # Install clipboard support
+  pv use "name" --no-copy        # Use without clipboard
+
+Vault not initialized:
+  prompt_vault.py init           # Initialize
+
+Import failed:
+  # Check JSON format
+  # Ensure "prompts" array exists
+  # Verify each prompt has "name" and "content"
+
+KEYBOARD SHORTCUTS
+────────────────────────────────────────────────────────────────────────────────
+(In interactive mode)
+Ctrl+C          Cancel current input
+Ctrl+D          Exit interactive mode
+---             End content input
+
+STATISTICS OUTPUT
+────────────────────────────────────────────────────────────────────────────────
+prompt_vault.py stats
+
+Shows:
+- Total prompts
+- Total uses  
+- Most used prompt
+- Breakdown by category
+
+Example:
+  📊 Vault Statistics
+  ────────────────────────────────────────
+    Total prompts:  42
+    Total uses:     156
+    Most used:      code-review (28 uses)
+    
+    By category:
+      coding: 18
+      debugging: 8
+      writing: 6
+
+BEST PRACTICES
+────────────────────────────────────────────────────────────────────────────────
+1. Use short, memorable names (code-review not code-review-checklist-v2-final)
+2. Tag everything (makes search easy)
+3. Use placeholders ([TOPIC], [CODE], etc.)
+4. Export weekly for backup
+5. Share best prompts with team
+6. Check stats monthly, delete unused
+7. Update prompts as you improve them
+8. Create workflows with numbered prefixes (deploy-1, deploy-2)
+9. Use categories consistently
+10. Keep descriptions short and clear
+
+QUICK START (30 SECONDS)
+────────────────────────────────────────────────────────────────────────────────
+python prompt_vault.py init
+python prompt_vault.py add "review" "Review this code for bugs and improvements"
+python prompt_vault.py use "review"
+# Paste your code into AI, get review!
+
+GETTING HELP
+────────────────────────────────────────────────────────────────────────────────
+General help:       prompt_vault.py --help
+Command help:       prompt_vault.py add --help
+                    prompt_vault.py export --help
+Examples:           See EXAMPLES.md
+Issues:             https://github.com/DonkRonk17/AI-Prompt-Vault/issues
+
+VERSION INFORMATION
+────────────────────────────────────────────────────────────────────────────────
+Current Version: 1.0.0
+Python Required: 3.8+
+Dependencies: None (stdlib only, clipboard optional)
+License: MIT
+Author: Randell Logan Smith / Metaphy LLC
+Repository: https://github.com/DonkRonk17/AI-Prompt-Vault
+
+═══════════════════════════════════════════════════════════════════════════════
+ NEED MORE HELP? Check EXAMPLES.md or README.md
+═══════════════════════════════════════════════════════════════════════════════
